@@ -23,7 +23,7 @@ public class DataDownLoaderServiceImpl implements DataDownLoaderService {
         return null;
     }
 
-    public String SendUrlRequest(String url) {
+    private String SendUrlRequest(String url) {
         String result = "";
         BufferedReader in = null;
         try {
