@@ -2,6 +2,8 @@ package com.webapp.service.impl;
 
 import com.domain.GPInfo;
 import com.webapp.service.DataDownLoaderService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -11,6 +13,8 @@ import java.util.Date;
 import java.util.List;
 
 public class DataDownLoaderServiceImpl implements DataDownLoaderService {
+
+    protected final Log log = LogFactory.getLog(DataDownLoaderServiceImpl.class);
     public List<GPInfo> download(String code, Date startDate, Date endDate) {
         return null;
     }
@@ -35,7 +39,7 @@ public class DataDownLoaderServiceImpl implements DataDownLoaderService {
                 result += line;
             }
         } catch (Exception e) {
-            System.out.println("发送GET请求出现异常！" + e);
+            log.error("\"发送GET请求出现异常！" + e);
             e.printStackTrace();
         } finally {
             try {
